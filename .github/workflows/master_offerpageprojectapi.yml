@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - offerpageproject
+name: Build and deploy ASP.Net Core app to Azure Web App - OfferPageProjectApi
 
 on:
   push:
@@ -23,10 +23,10 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build D:\a\OfferPageProject\OfferPageProject\OfferPageProject.API\OfferPageProject.API.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish D:\a\OfferPageProject\OfferPageProject\OfferPageProject.API\OfferPageProject.API.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -52,15 +52,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_BB03324AADFE49B8B8909C0611F542A9 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C29843E8DC9042EC8C438C13A7220143 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_15EEAF211F0D44C6BF28E3770BC1CAD5 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_B837177344C34CB6A70A0C4E5C6EF4A0 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_183B32909FF4422CAB35C52C5214831C }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E84F3F679B3742CE9EFC47A833295077 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'offerpageproject'
+          app-name: 'OfferPageProjectApi'
           slot-name: 'Production'
           package: .
           
