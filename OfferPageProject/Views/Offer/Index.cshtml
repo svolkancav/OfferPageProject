@@ -1,0 +1,92 @@
+﻿@model IEnumerable<OfferPageProject.Common.VM.OfferVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                Mode Name
+            </th>
+
+            <th>
+                Movement Type
+            </th>
+ 
+            <th>
+                Inco Terms
+            </th>
+  
+            <th>
+                Country
+            </th>
+ 
+            <th>
+                Unit-1
+            </th>
+   
+            <th>
+                Unit-2
+            </th>
+
+            <th>
+                Currency
+            </th>
+            <th>
+                Package Type
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ModeName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.MovementTypeName)
+            </td>
+   
+            <td>
+                @Html.DisplayFor(modelItem => item.IncoTermsName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryName)
+            </td>
+
+            <td>
+                    @Html.DisplayFor(modelItem => item.Unit1Quantity)@Html.DisplayFor(modelItem => item.Unit1Type)
+            </td>
+
+            <td>
+                    @Html.DisplayFor(modelItem => item.Unit1Quantity)@Html.DisplayFor(modelItem => item.Unit2Type)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Currency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PackageType)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

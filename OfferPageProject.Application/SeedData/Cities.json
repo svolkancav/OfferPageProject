@@ -1,0 +1,63 @@
+[
+  {
+    "Cities": [
+      {
+        "City": {
+          "id": 1,
+          "Name": "New York",
+          "CountryId": 1
+        }
+      },
+      {
+        "City": {
+          "id": 2,
+          "Name": "Los Angeles",
+          "CountryId": 1
+        }
+      },
+      {
+        "City": {
+          "id": 3,
+          "Name": "Miami",
+          "CountryId": 1
+        }
+      },
+      {
+        "City": {
+          "id": 4,
+          "Name": "Minesota",
+          "CountryId": 1
+        }
+      },
+      {
+        "City": {
+          "id": 5,
+          "Name": "Istanbul",
+          "CountryId": 2
+        }
+      },
+      {
+        "City": {
+          "id": 6,
+          "Name": "Izmır",
+          "CountryId": 2
+        }
+      },
+      {
+        "City": {
+          "id": 7,
+          "Name": "Beijing",
+          "CountryId": 3
+        }
+      },
+      {
+        "City": {
+          "id": 8,
+          "Name": "Shanghai",
+          "CountryId": 3
+        }
+      }
+
+    ]
+  }
+]
