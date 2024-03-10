@@ -9,7 +9,7 @@ namespace OfferPageProject.Common.DTOs
 {
     public class CountryDTO
     {
-        public int Id { get; set; }
+        public int CountryId { get; set; }
         public string Name { get; set; }
         public ICollection<City> Cities { get; set; }
     }

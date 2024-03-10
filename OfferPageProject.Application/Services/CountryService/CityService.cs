@@ -26,10 +26,10 @@ namespace OfferPageProject.Application.Services.CountryService
         {
             return await _cityRepository.GetFilteredList(x => new CityDTO
             {
-                Id = x.Id,
+                CityId = x.Id,
                 Name = x.Name,
                 Country = x.Country,
-                CountryId = x.Id
+                CountryId = x.CountryId
             }, x => x.Status != Status.Deleted);
         }
 

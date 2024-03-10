@@ -106,32 +106,31 @@
 
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
 <script>
     $(document).ready(function () {
-        $('#countryDropdown').change(function () {
+        $('#CountryId').change(function () {
             var selectedCountryId = $(this).val();
-            if (selectedCountryId) {
-                $.ajax({
-                    url: '/Offer/GetCities',
-                    type: 'GET',
-                    data: { countryId: selectedCountryId },
-                    success: function (data) {
-                        // Clear and populate the city dropdown
-                        $('#cityDropdown').empty();
-                        $.each(data, function (index, item) {
-                            $('#cityDropdown').append($('<option>', {
-                                value: item.value,
-                                text: item.text
-                            }));
-                        });
-                    }
-                });
-            }
-            else {
-                // If no country selected, clear the city dropdown
-                $('#cityDropdown').empty();
-            }
+            $.ajax({
+                url: '/Offer/GetCities',
+                type: 'GET',
+                data: { countryId: selectedCountryId },
+                success: function (data) {
+
+                    updateCitiesDropdown(data);
+                },
+                error: function () {
+                    console.error('Error fetching Cities.');
+                }
+            });
         });
+
+        function updateCitiesDropdown(CityList) {
+            var cityDropdown = $('#CityId');
+            cityDropdown.empty();
+            cityDropdown.append($('<option>').val('').text('Select City'));
+            $.each(CityList, function (index, city) {
+                cityDropdown.append($('<option>').val(city.value).text(city.text));
+            });
+        }
     });
 </script>

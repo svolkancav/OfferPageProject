@@ -9,7 +9,7 @@ namespace OfferPageProject.Common.DTOs
 {
     public class CityDTO : BaseEntity
     {
-        public int Id { get; set; }
+        public int CityId { get; set; }
         public string Name { get; set; }
         public int CountryId { get; set; }
         public Country Country { get; set; }

@@ -38,7 +38,7 @@ namespace OfferPageProject.Application.Services.OfferService
                 ModeId = model.ModeId,
                 MovementTypeId = model.MovementTypeId,
                 Unit1Id = model.Unit1Id,
-                Unit2Id = model.Unit2Id
+                Unit2Id = model.Unit2Id,
             };
             try
             {

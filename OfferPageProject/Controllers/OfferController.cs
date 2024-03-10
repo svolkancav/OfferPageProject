@@ -85,12 +85,12 @@ namespace OfferPageProject.Controllers
             CreateOfferDTO model = new CreateOfferDTO();
             model.CountryList = countries.Select(c => new SelectListItem
             {
-                Value = c.Id.ToString(),
+                Value = c.CountryId.ToString(),
                 Text = c.Name
             }).ToList();
             model.CityList = cities.Select(d => new SelectListItem
             {
-                Value = d.Id.ToString(),
+                Value = d.CityId.ToString(),
                 Text = d.Name
             }).ToList();
 
@@ -112,12 +112,12 @@ namespace OfferPageProject.Controllers
             model.Unit1List = unit1s.Select(d => new SelectListItem
             {
                 Value = d.Id.ToString(),
-                Text = d.Quantity.ToString()+d.UnitType
+                Text = d.Quantity.ToString() + d.UnitType
             }).ToList();
             model.Unit2List = unit2s.Select(d => new SelectListItem
             {
                 Value = d.Id.ToString(),
-                Text = d.Quantity.ToString() + d.UnitType
+                Text =d.Quantity.ToString()+d.UnitType
             }).ToList();
 
             return View(model);
@@ -151,10 +151,10 @@ namespace OfferPageProject.Controllers
         {
             List<CityDTO> cityList = await _apiService.GetAsyncWoToken<List<CityDTO>>("city");
             var cities = cityList
-                .Where(d => d.Id == countryId)
+                .Where(d => d.CountryId == countryId)
                 .Select(d => new SelectListItem
                 {
-                    Value = d.Id.ToString(),
+                    Value = d.CityId.ToString(),
                     Text = d.Name
                 })
                 .ToList();

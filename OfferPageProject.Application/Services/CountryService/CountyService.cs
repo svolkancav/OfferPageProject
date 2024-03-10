@@ -23,7 +23,7 @@ namespace OfferPageProject.Application.Services.CountryService
             {
                 return await _countryRepository.GetFilteredList(x => new CountryDTO
                 {
-                    Id = x.Id,
+                    CountryId = x.Id,
                     Name = x.Name,
                     Cities = x.Cities
                 }, x=>x.Status != Domain.Enum.Status.Deleted);

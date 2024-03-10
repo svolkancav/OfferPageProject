@@ -12,7 +12,9 @@ namespace OfferPageProject.Common.DTOs
         public int CountryId { get; set; }
         public int? CityId { get; set; }
         public int Unit1Id { get; set; }
+        public int Unit1Quantity { get; set; }
         public int Unit2Id { get; set; }
+        public int Unit2Quantity { get; set; }
         public Currency Currency { get; set; }
         public PackageType PackageType { get; set; }
 
