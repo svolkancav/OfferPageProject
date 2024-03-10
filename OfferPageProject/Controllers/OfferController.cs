@@ -22,7 +22,7 @@ namespace OfferPageProject.Controllers
             {
 
                 List<OfferVM> offers = await _apiService.GetAsync<List<OfferVM>>("offer", HttpContext.Request.Cookies["access-token"]);
-                List<OfferVM> selectedOffers = offers.Where(x => x.PackageType.ToString().Contains(searchText.ToLower()) || x.ModeName.ToString().Contains(searchText) || x.MovementTypeName.ToString().Contains(searchText) || x.IncoTermsName.ToString().Contains(searchText) || x.Currency.ToString().Contains(searchText)).ToList();
+                List<OfferVM> selectedOffers = offers.Where(x => x.PackageType.ToString().ToLower().Contains(searchText.ToLower()) || x.ModeName.ToString().ToLower().Contains(searchText.ToLower()) || x.MovementTypeName.ToString().ToLower().Contains(searchText.ToLower()) || x.IncoTermsName.ToString().ToLower().Contains(searchText.ToLower()) || x.Currency.ToString().ToLower().Contains(searchText.ToLower())).ToList();
                 // Apply sorting
                 selectedOffers = ApplySorting(selectedOffers.AsQueryable(), sortColumn, sortOrder).ToList();
 
@@ -42,13 +42,13 @@ namespace OfferPageProject.Controllers
         {
             switch (sortColumn)
             {
-                case "CreateDate":
-                    offerList = sortOrder == "asc" ? offerList.OrderBy(p => p.CreatedDate) : offerList.OrderByDescending(p => p.CreatedDate);
-                    break;
                 case "PackageType":
                     offerList = sortOrder == "asc" ? offerList.OrderBy(p => p.PackageType) : offerList.OrderByDescending(p => p.PackageType);
                     break;
-                case "ModeName":
+				case "CountryName":
+					offerList = sortOrder == "asc" ? offerList.OrderBy(p => p.CountryName) : offerList.OrderByDescending(p => p.CountryName);
+					break;
+				case "ModeName":
                     offerList = sortOrder == "asc" ? offerList.OrderBy(p => p.ModeName) : offerList.OrderByDescending(p => p.ModeName);
                     break;
                 case "MovementTypeName":

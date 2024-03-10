@@ -6,73 +6,72 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 class="p-4">Create Offer</h1>
 
-<h4>OfferDTO</h4>
 <hr />
-<div class="row">
+<div class="row p-4">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="ModeId" class="control-label"></label>
+                <label asp-for="ModeId" class="control-label">Mode</label>
                 <select asp-for="ModeId" asp-items="Model.ModeList" class="form-control">
-                    <option value="-1">--</option>
+                    <option value="-1">Select Mode</option>
                 </select>
                 <span asp-validation-for="ModeId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MovementTypeId" class="control-label"></label>
+                <label asp-for="MovementTypeId" class="control-label">Movement Type</label>
                 <select asp-for="MovementTypeId" asp-items="Model.MovementTypeList" class="form-control">
-                    <option value="-1">--</option>
+                    <option value="-1">Select Movement Type</option>
                 </select>
                 <span asp-validation-for="MovementTypeId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IncotermsId" class="control-label"></label>
+                <label asp-for="IncotermsId" class="control-label">IncoTerms</label>
                 <select asp-for="IncotermsId" asp-items="Model.IncoTermsList" class="form-control">
-                    <option value="-1">--</option>
+                    <option value="-1">Select IncoTerms</option>
                 </select>
                 <span asp-validation-for="IncotermsId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CountryId" class="control-label"></label>
+                <label asp-for="CountryId" class="control-label">Country</label>
                 <select asp-for="CountryId" asp-items="Model.CountryList" class="form-control">
                     <option value="">Select Country</option>
                 </select>
                 <span asp-validation-for="CountryId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CityId" class="control-label"></label>
+                <label asp-for="CityId" class="control-label">City</label>
                 <select asp-for="CityId" asp-items="Model.CityList" class="form-control">
                     <option value="">Select City</option>
                 </select>
                 <span asp-validation-for="CityId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Unit1Id" class="control-label"></label>
+                <label asp-for="Unit1Id" class="control-label">Unit-1</label>
                 <select asp-for="Unit1Id" asp-items="Model.Unit1List" class="form-control">
-                    <option value="-1">--</option>
+                    <option value="-1">Select Unit-1</option>
                 </select>
                 <span asp-validation-for="Unit1Id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Unit2Id" class="control-label"></label>
+                <label asp-for="Unit2Id" class="control-label">Unit-2</label>
                 <select asp-for="Unit2Id" asp-items="Model.Unit2List" class="form-control">
-                    <option value="-1">--</option>
+                    <option value="-1">Select Unit-2</option>
                 </select>
                 <span asp-validation-for="Unit2Id" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label for="PackageType">Package Type:</label>
                 <select class="form-control" asp-for="PackageType" asp-items="EnumHelper.GetEnumSelectList<PackageType>()">
-                    <option value="-1">--</option>
+                    <option value="-1">Select Package Type</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="Currency">Currency:</label>
                 <select class="form-control" asp-for="Currency" asp-items="EnumHelper.GetEnumSelectList<Currency>()">
-                    <option value="-1">--</option>
+                    <option value="-1">Select Currency</option>
                 </select>
             </div>
 
@@ -83,7 +82,7 @@
     </div>
 </div>
 
-<div>
+<div class="p-4">
     <a asp-action="Index">Back to List</a>
 </div>
 
@@ -104,34 +103,7 @@
     }
     }
 
-@*<script>
-    $(document).ready(function () {
-        $('#CountryId').change(function () {
-            var selectedCountryId = $(this).val();
-            $.ajax({
-                url: '/Offer/GetCities',
-                type: 'GET',
-                data: { countryId: selectedCountryId },
-                success: function (data) {
 
-                    updateCitiesDropdown(data);
-                },
-                error: function () {
-                    console.error('Error fetching cities.');
-                }
-            });
-        });
-
-        function updateCitiesDropdown(cities) {
-            var cityDropdown = $('#CityId');
-            cityDropdown.empty();
-            cityDropdown.append($('<option>').val('').text('Select City'));
-            $.each(cities, function (index, city) {
-                cityDropdown.append($('<option>').val(city.value).text(city.text));
-            });
-        }
-    });
-</script>*@
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
