@@ -17,7 +17,8 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connecti
 
 builder.Services.AddHttpClient<IAPIService, APIService>(opt =>
 {
-    opt.BaseAddress = new Uri("https://localhost:7258/api/");
+    opt.BaseAddress = new Uri("https://offerpageproject.azurewebsites.net/api/");
+//https://localhost:7258/api/
 
 });
 
@@ -56,6 +57,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Offer}/{action=Index}/{id?}");
 
 app.Run();
