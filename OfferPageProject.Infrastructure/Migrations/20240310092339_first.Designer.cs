@@ -12,7 +12,7 @@ using OfferPageProject.Infrastructure.Context;
 namespace OfferPageProject.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240310075635_first")]
+    [Migration("20240310092339_first")]
     partial class first
     {
         /// <inheritdoc />
