@@ -17,7 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connecti
 
 builder.Services.AddHttpClient<IAPIService, APIService>(opt =>
 {
-    opt.BaseAddress = new Uri("https://offerpageproject.azurewebsites.net/api/");
+    opt.BaseAddress = new Uri("https://offerpageprojectapi.azurewebsites.net/api/");
 //https://localhost:7258/api/
 
 });
