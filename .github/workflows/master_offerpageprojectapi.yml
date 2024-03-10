@@ -23,7 +23,7 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build ./OfferPageProject/OfferPageProject.API/OfferPageProject.API.csproj --configuration Release
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
         run: dotnet publish ./OfferPageProject/OfferPageProject.API/OfferPageProject.API.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
